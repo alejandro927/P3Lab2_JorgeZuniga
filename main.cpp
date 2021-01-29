@@ -59,28 +59,33 @@ int main(int argc, char** argv) {
 		cout<<"2) Ejercicio2"<<endl;
 		cout<<"3) Ejercicio3"<<endl;
 		cout<<"4) Salida"<<endl;
-		cout<<"Ingrese su opcion:"<<endl;
+		cout<<"Ingrese su opcion: ";
 		cin>>opcion;
 		//imgresa la opcion que desea
 		switch(opcion) {
 			case 1: {
 
 				string palabra;
-
 				cout << "Ingrese la cadena a evaluar: ";
 				cin >> palabra;
 				int valor = 0;
-
+				//ciclo que se repita hasta que termine la palabra o cadena
 				for (int i = 0; i < palabra.length(); i++) {
+					//si encuentra una a en la posicion 2 entra
 					if ((palabra[i] == 'A' && i == 1) || (palabra[i] == 'a' && i == 1)) {
+						//valida lo de la tabla de verdad si es falso
 						if ((palabra[i - 1] == '1' && palabra[i + 3] == '0') || (palabra[i - 1] == '0' && palabra[i + 3] == '1') || (palabra[i - 1] == '0' && palabra[i + 3] == '0')) {
 							valor = 0;
+							//aqui ingresa si es verdadero y lo almacena para compararlo despues
 						} else {
 							valor = 1;
 						}
-					} else if ((palabra[i] == 'O' && i == 1) || (palabra[i] == 'o' && i == 1)){
+						//Si encuentra una o de inicio entra aqui
+					} else if ((palabra[i] == 'O' && i == 1) || (palabra[i] == 'o' && i == 1)) {
+						//valida de que si es falsa entra de un solo
 						if (valor == '0' && palabra[i + 2] == '0') {
 							valor = 0;
+							//si es verdadera entra aqui y lo almacena
 						} else {
 							valor = 1;
 						}
@@ -97,14 +102,14 @@ int main(int argc, char** argv) {
 							valor = 1;
 						}
 					}
-				}//fin del for que recorre el length de la cadena
-
+				}//fin del for
+				//aqui dice si el auxiliar acumulado es verdadero o falso
 				if (valor != 1) {
 					cout << "Falso " << endl;
 				} else {
-					cout << "Verdadero" << endl;
+					cout << "Verdadero " << endl;
 				}//fin que valida resultados
-
+				cout<<endl;
 
 			}
 			break;
