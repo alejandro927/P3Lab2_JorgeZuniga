@@ -118,7 +118,7 @@ int main(int argc, char** argv) {
 				int b[n];
 				//crea el arreglo y lo llena de numeros random hasta 99
 				for(int i = 0; i < n; i++) {
-					b[i] = 1 + (rand() % 9);
+					b[i] = 1 + (rand() % 99);
 				}
 				//imprime el arreglo original
 				cout<<"Arreglo original="<<endl;
